@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="twitterBootstrap/css/bootstrap.min.css" rel="stylesheet"
-	media="screen">
+	<%@include file="include.jsp" %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Developing Diary</title>
+
 <style type="text/css">
 #headLine {
 	background-color: #aaaaaa;
@@ -52,8 +52,8 @@ h1 {
 				<h1>Developing Diary</h1>
 				<div id="headMenu">
 					<a href="">Home</a>
-					<a href="">¹æ¸í·Ï</a>
-					<a href="">·Î±×ÀÎ</a>
+					<a href="">ë°©ëª…ë¡</a>
+					<a href="">ë¡œê·¸ì¸</a>
 				</div>
 			</div>
 			<div class="row-fluid" id="contents">
@@ -62,30 +62,32 @@ h1 {
 						id: <input class="span5" type="text" name="id"/><br/>
 						pw: <input class="span5" type="password" name="password"/>
 					</div>
+					<div id="develop">
+						<a href="jquery_ex.jsp">-jQuery</a>
+					</div>
 				</div>
 				<div class="span9" id="eachContent">
 					<p>
-						¾È³çÇÏ¼¼¿ä. ÀÌ°÷Àº ÇÑ ÃÊº¸ °³¹ßÀÚÀÇ °³¹ß °ü·Ã ÇÐ½ÀÀÌ·Â°ú
-						±â¼úÀÌ·ÂÀ» ±â·ÏÇÏ°í °ü¸®ÇÏ´Â °÷ÀÔ´Ï´Ù.<br /> ¿î¿µ ÃÊ±â¿¡´Â ÇÐ½ÀÇÑ À¥ °ü·Ã ±â¼úÀ» ½ÇÁ¦ Àû¿ëÇØº¸´Â µ¥ ÃÊÁ¡À»
-						¸ÂÃß°í ¿î¿µÇÒ °èÈ¹ÀÔ´Ï´Ù.<br /><br /> ÀÌ À¥»çÀÌÆ®ÀÇ ¼­¹ö ÀÎÇÁ¶ó ¹× ¾ÆÅ°ÅØÃÄ´Â ´ÙÀ½°ú °°½À´Ï´Ù.<br /> <br />
-						ÀÎÇÁ¶ó: <a href="http://aws.amazon.com">¾Æ¸¶Á¸ Å¬¶ó¿ìµå</a> EC2 t1.micro<br />
-						¹öÀü°ü¸®: <a href="http://www.git-scm.com">Git</a> and <a
-							href="http://github.com">GitHub</a><br /> ¿î¿µÃ¼Á¦: <a
+						ì•ˆë…•í•˜ì„¸ìš”. ì´ê³³ì€ í•œ ì´ˆë³´ ê°œë°œìžì˜ ê°œë°œ ê´€ë ¨ í•™ìŠµì´ë ¥ê³¼
+						ê¸°ìˆ ì´ë ¥ì„ ê¸°ë¡í•˜ê³  ê´€ë¦¬í•˜ëŠ” ê³³ìž…ë‹ˆë‹¤.<br /> ìš´ì˜ ì´ˆê¸°ì—ëŠ” í•™ìŠµí•œ ì›¹ ê´€ë ¨ ê¸°ìˆ ì„ ì‹¤ì œ ì ìš©í•´ë³´ëŠ” ë° ì´ˆì ì„
+						ë§žì¶”ê³  ìš´ì˜í•  ê³„íšìž…ë‹ˆë‹¤.<br /><br /> ì´ ì›¹ì‚¬ì´íŠ¸ì˜ ì„œë²„ ì¸í”„ë¼ ë° ì•„í‚¤í…ì³ëŠ” ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.<br /> <br />
+						ì¸í”„ë¼: <a href="http://aws.amazon.com">ì•„ë§ˆì¡´ í´ë¼ìš°ë“œ</a> EC2 t1.micro<br />
+						ë²„ì „ê´€ë¦¬: <a href="http://www.git-scm.com">Git</a> and <a
+							href="http://github.com">GitHub</a><br /> ìš´ì˜ì²´ì œ: <a
 							href="http://aws.amazon.com">Amazon Linux</a> 3.2<br/>
-						À¥¼­¹ö: <a href="http://apache.org">Apache 2.2.22</a><br />
-						WAS¼­¹ö : ÅèÄ¹7.0 <br/> ¼­¹ö»çÀÌµå¾ð¾î: Java, JSP <br /> Å¬¶óÀÌ¾ðÆ®»çÀÌµå ¾ð¾î: html, css, Javascript,
-						<a href="http://jquery.com">jQuery</a><br /> <br /> ¾î¸®¹ö¸®ÇÑ
-						ÃÊº¸°³¹ßÀÚÀÔ´Ï´Ù¸¸, °ü·Ã ±â¼ú¿¡ °üÇÑ ¹®ÀÇ´Â ¾ðÁ¦³ª È¯¿µÇÕ´Ï´Ù! <br />
-						Áö±Ý ½Ã°¢Àº
+						ì›¹ì„œë²„: <a href="http://apache.org">Apache 2.2.22</a><br />
+						WASì„œë²„ : í†°ìº£7.0 <br/> ì„œë²„ì‚¬ì´ë“œì–¸ì–´: Java, JSP <br /> í´ë¼ì´ì–¸íŠ¸ì‚¬ì´ë“œ ì–¸ì–´: html, css, Javascript,
+						<a href="http://jquery.com">jQuery</a><br /> <br /> ì–´ë¦¬ë²„ë¦¬í•œ
+						ì´ˆë³´ê°œë°œìžìž…ë‹ˆë‹¤ë§Œ, ê´€ë ¨ ê¸°ìˆ ì— ê´€í•œ ë¬¸ì˜ëŠ” ì–¸ì œë‚˜ í™˜ì˜í•©ë‹ˆë‹¤! <br />
+						ì§€ê¸ˆ ì‹œê°ì€
 						<%=new java.util.Date()%><br />
 					</p>
 					<div></div>
-					<p>ÃÖÁ¾ ¾÷µ¥ÀÌÆ®: 2013.04.16</p>
+					<p>ìµœì¢… ì—…ë°ì´íŠ¸: 2013.04.16</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="twitterBootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>
