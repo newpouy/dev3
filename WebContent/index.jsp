@@ -52,6 +52,7 @@ h1 {
 				<h1>Developing Diary</h1>
 				<div id="headMenu">
 					<a href="">Home</a>
+					<a href="php_info.php">php</a>
 					<a href="">방명록</a>
 					<a href="">로그인</a>
 				</div>
