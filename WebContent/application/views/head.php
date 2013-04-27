@@ -58,8 +58,8 @@ h1 {
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span12" id="headLine">
-				<h1>Developing Diary</h1><br/>
-				&nbsp;알림: <a href="/dev3/visit_rec/1">방명록</a> 만들었습니다. 발도장 플리즈~~
+				<h1>Develop-ing Diary</h1><br/>
+				&nbsp;알림: 방명록과 개발일기 만들었습니다. 개발일기는 매일 업데이트됩니다(아마도...).
 				<div id="headMenu">
 					<a href="/dev3">Home</a>
 					<a href="/diary">개발일기</a>

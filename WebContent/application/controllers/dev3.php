@@ -1,8 +1,13 @@
 <?php
 class Dev3 extends CI_Controller {
 	public function index(){
-		$this->load->view('head.php');
-		$this->load->view('main.php');
+		$this->load->view('head');
+		$this->load->view('main');
+	}
+	public function test(){
+		echo 'test';
+		$this->load->view('head');
+		$this->load->view('diary_write');
 	}
 
 	public function visit_rec($start_num){
