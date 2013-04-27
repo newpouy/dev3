@@ -18,7 +18,7 @@ class Dev3 extends CI_Controller {
 		$view_row=$this->visit_rec_model->getRows($start_num-1);
 				
 		$this->load->library('pagination');
-		$config['base_url'] = 'http://localhost/dev3/visit_rec/';
+		$config['base_url'] = 'http://54.225.101.87/dev3/visit_rec/';
 		$config['total_rows'] = count($total_row);	
 		$config['per_page'] = 5;
 		$this->pagination->initialize($config);
