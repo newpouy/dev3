@@ -3,7 +3,7 @@
 		alert(modalID);
 		
 	}
-	function goModify(diaryID){
+	function goModify(diaryID){	
 		var obj=document.frm;
 		obj.action="/diary/modify/"+diaryID;
 		obj.submit();
