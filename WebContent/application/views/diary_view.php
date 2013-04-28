@@ -3,7 +3,13 @@
 		alert(modalID);
 		
 	}
+	function goModify(diaryID){
+		var obj=document.frm;
+		obj.action="/diary/modify/"+diaryID;
+		obj.submit();
+	}
 </script>
+<form name="frm" method="post">
 				<div class="span9" id="eachContent">
 					<span style="font-size: 20px;">다이어리</span><span style="font-size: 10px;">게시판버전</span>
 					<div align="right"><a href="/diary/write"><button class="btn" style="">쓰기</button></a></div>
@@ -51,13 +57,21 @@ foreach ($list as $key => $value) {
 	    	</div>
 	    	<div class="modal-footer">
 	    		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-	   			<button class="btn btn-primary">Save changes</button>
+	    		';
+			if(isset($_SESSION['id'])){
+				if($_SESSION['id']=='newpouy'){
+				echo '
+	   			<button class="btn btn-primary" onclick="goModify('.$value['diaryID'].')">Modify</button>
+	   			';
+			}}
+			echo '
 	    	</div>
 	    </div>
 	';
 }
 ?>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

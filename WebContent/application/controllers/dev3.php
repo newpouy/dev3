@@ -9,6 +9,23 @@ class Dev3 extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('diary_write');
 	}
+	public function login(){
+		$id=$this->input->post('id');
+		$pw=$this->input->post('pw');
+		if($id=='newpouy'){
+			if($pw=='cv4069cv'){
+				session_start();
+				$_SESSION['is_login']=true;
+				$_SESSION['id']='newpouy';
+				header('Location: /dev3');
+			}
+		}
+	}
+	public function logout(){
+		session_start();
+		$_SESSION['is_login']=false;
+		header('Location: /dev3');
+	}
 
 	public function visit_rec($start_num){
 		$this->load->database();

@@ -23,5 +23,20 @@ class Diary extends CI_Controller {
 		$this->diary_model->insert();
 		echo "<meta http-equiv=\"refresh\" content=\"0; url=/diary\">";
 	}
+	public function modify($diaryID){
+		$this->load->database();
+		$this->load->model('diary_model');
+		$oneDiary=$this->diary_model->getOneDiary($diaryID);
+		$this->load->view('head');
+		$this->load->view('diary_modify',array('oneDiary'=>$oneDiary));
+	}
+	public function modifyEx($diaryID){
+		$content=$this->input->post('content');
+		$this->load->database();
+		$this->load->model('diary_model');
+		$this->diary_model->updateDiary($diaryID,$content);
+		//echo 'Location: /diary#myModal'.$diaryID
+		header('Location: /diary#myModal'.$diaryID);
+	}
 }
 ?>

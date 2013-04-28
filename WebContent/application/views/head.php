@@ -64,15 +64,57 @@ h1 {
 					<a href="/dev3">Home</a>
 					<a href="/diary">개발일기</a>
 					<a href="/dev3/visit_rec/1">방명록</a>
-					<a href="/dev3">로그인</a>
+					<a href="/dev3/logout">로그아웃</a>
 				</div>
 			</div>
 			<div class="row-fluid" id="contents">
 				<div class="span3" id="sideMenu">
-					<div id="loginForm">
-						id: <input class="span5" type="text" name="id"/><br/>
-						pw: <input class="span5" type="password" name="password"/>
+					<?php
+					session_start();
+						if(!isset($_SESSION['is_login'])){//세션이 셋팅되지 않았다면
+							session_destroy();
+							echo '
+							<div id="loginForm">
+						<form action="/dev3/login" method="post">
+						<table>
+							<tr>
+							<td>ID</td>
+							<td><input class="span5" type="text" name="id"/></td>
+						</tr>
+						<tr>
+							<td>PW</td>
+							<td><input class="span5" type="password" name="pw"/></td>
+						</tr>
+						</table>
+						<button class="btn">로긴</button>
+						</form>
 					</div>
+							';
+						}else{//세션이 세팅되었지만
+							if($_SESSION['is_login']==false){//로그아웃이라면
+								session_destroy();
+							echo '
+							<div id="loginForm">
+						<form action="/dev3/login" method="post">
+						<table>
+							<tr>
+							<td>ID</td>
+							<td><input class="span5" type="text" name="id"/></td>
+						</tr>
+						<tr>
+							<td>PW</td>
+							<td><input class="span5" type="password" name="pw"/></td>
+						</tr>
+						</table>
+						<button class="btn">로긴</button>
+						</form>
+					</div>
+							';
+							}
+						}
+					
+					?>
+					
 					<div id="develop">
 						<a href="jquery_ex.jsp">-jQuery</a>
 					</div>

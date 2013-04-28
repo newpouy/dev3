@@ -11,15 +11,17 @@ class Diary_model extends CI_Model {
 		$query="select dt.diaryID,dt.tagID,tl.tagName from diary_tag dt,tag_list tl where dt.tagID=tl.tagID";
 		return $this->db->query($query)->result_array();
 	}
+	public function getOneDiary($diaryID){
+		$query="SELECT d.diaryID,d.content,d.regDate,dt.tagID FROM diary d,diary_tag dt WHERE d.diaryID=".$diaryID;
+		return $oneDiary=$this->db->query($query)->result_array();
+	}
 	public function insert(){
-		echo 'here model<br/>';
 		$content=$this->input->post('content');
 		$tag=$this->input->post('tag');//입력받은 태그배열
 		
 		//일기를 입력하고 
 		$query11="insert into diary(content,regDate,delYN) values('$content',now(),'N')";
 		$result=$this->db->query($query11);
-		echo '!!'.$result.'<br/>';
 		//방금입력한 일기의 diaryID값을 가져온다.
 		$query12="select max(diaryID) as diaryID from diary";
 		$diaryID=$this->db->query($query12)->result_array();
@@ -43,6 +45,10 @@ class Diary_model extends CI_Model {
 			$query31="insert into diary_tag values($diaryID,$tagID)";
 			$this->db->query($query31);
 		}
+	}
+	public function updateDiary($diaryID,$content){
+		$query="update diary set content='$content' where diaryID='$diaryID'";
+		return $this->db->query($query);
 	}
 }
 ?>
