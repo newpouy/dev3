@@ -23,7 +23,7 @@
 							CKEDITOR.replace('content');
 						</script>
 						<br/>
-					<div align="center"><button class="btn" onclick="goModifyEx(<?=$oneDiary[0]['diaryID']?>)">쓰기</button></div>
+					<div align="center"><button class="btn" onclick="goModifyEx(<?echo $oneDiary[0]['diaryID']?>)">쓰기</button></div>
 					</form>
 				</div>
 			</div>
