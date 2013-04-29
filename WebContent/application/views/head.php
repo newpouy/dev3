@@ -50,6 +50,7 @@ h1 {
 
 <script type="text/javascript">
 $(function(){
+	
 	$('span#notcie').
 });
 </script>
