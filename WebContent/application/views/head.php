@@ -55,10 +55,10 @@ h1 {
 
 </head>
 <body>
-	<div class="container">
+	<div class="">
 		<div class="row-fluid">
 			<div class="span12" id="headLine">
-				<h1>Develop-ing Diary</h1><br/>
+				<a href="/" style="color: #222"><h1>Develop-ing Diary</h1></a><br/>
 				&nbsp;알림: 방명록과 개발일기 만들었습니다. 개발일기는 매일 업데이트됩니다(아마도...).
 				<div id="headMenu">
 					<a href="/dev3">Home</a>

@@ -8,11 +8,16 @@
 		obj.action="/diary/modify/"+diaryID;
 		obj.submit();
 	}
+	function goWrite(){
+		var obj=document.frm;
+		obj.action="/diary/write";
+		obj.submit();
+	}
 </script>
 <form name="frm" method="post">
 				<div class="span9" id="eachContent">
 					<span style="font-size: 20px;">다이어리</span><span style="font-size: 10px;">게시판버전</span>
-					<div align="right"><a href="/diary/write"><button class="btn" style="">쓰기</button></a></div>
+					<div align="right"><button class="btn" onclick="goWrite()">쓰기</button></div>
 					<table class='table table-hover'>
 						<thead>
 							<tr>

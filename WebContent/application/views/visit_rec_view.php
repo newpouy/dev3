@@ -51,7 +51,7 @@ $(function() {
 					echo '<button onclick="javascript:goDel('.$value['recID'].')">X</button></a><br/><br/><br/>';
 				}
 				?>
-				<?=$page_link?>
+				<?php echo $page_link;?>
 					
 				</div>
 			</div>
