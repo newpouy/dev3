@@ -24,6 +24,7 @@ class Dev3 extends CI_Controller {
 	public function logout(){
 		session_start();
 		$_SESSION['is_login']=false;
+		session_destroy();
 		header('Location: /dev3');
 	}
 
