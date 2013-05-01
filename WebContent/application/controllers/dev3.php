@@ -4,11 +4,13 @@ class Dev3 extends CI_Controller {
 		//phpinfo();	
 		$this->load->view('head');
 		$this->load->view('main');
+		$this->load->view('foot');
 	}
 	public function test(){
 		echo 'test';
 		$this->load->view('head');
 		$this->load->view('diary_write');
+		$this->load->view('foot');
 	}
 	public function login(){
 		$id=$this->input->post('id');
@@ -43,8 +45,9 @@ class Dev3 extends CI_Controller {
 		$this->pagination->initialize($config);
 		$page_link=$this->pagination->create_links();
 		
-		$this->load->view('head.php');
+		$this->load->view('head');
 		$this->load->view('visit_rec_view.php',array('data'=>$view_row,'page_link'=>$page_link));
+		$this->load->view('foot');
 		
 	}
 	public function visit_rec_insert(){

@@ -9,6 +9,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/common/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/common/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <style type="text/css">
 #headLine {
 	background-color: #eeeeee;
@@ -42,7 +43,9 @@
 h1 {
  margin-left: 10px;
 }
-
+.widthWide {
+	width: 800px;
+}
 </style>
 
 <script src="http://code.jquery.com/jquery.js"></script>
@@ -50,9 +53,12 @@ h1 {
 
 <script type="text/javascript">
 $(function(){
-	
-	$('span#notcie').
+	$('[rel="tooltip"]').tooltip('toggle');
+	$('[rel="tooltip"]').tooltip('hide');
+	$('#tw').attr("data-original-title","OAuth방식으로 연동되어 당신의 타임라인을 이곳에서 볼 수 있사옵니다. 개인정보는 저장할수 없사옵니다....................오빠 못믿니?")
+		.tooltip('toggle').tooltip('hide').next('div').addClass('widthWide');
 });
+
 </script>
 
 </head>
@@ -64,72 +70,71 @@ $(function(){
 				&nbsp;<span style="font-weight: bold;">알림 </span><span id="notice">방명록과 개발일기 만들었습니다. 개발일기는 매일 업데이트됩니다(아마도...)</span> 
 				<div id="headMenu">
 					<a href="/dev3">Home</a>
-					<a href="/diary">개발일기</a>
-					<a href="/dev3/visit_rec/1">방명록</a>
-					<?php 
-	    					session_start();
-							if(isset($_SESSION['is_login'])){
-	    						if($_SESSION['is_login']){
-	   								echo '<a href="/dev3/logout" data-toggle="modal">관리자OUT</a>';
-								}
-	    					}else{
-	    						echo '<a href="#loginModal" data-toggle="modal">관리자IN</a>';}
+					<a href="/diary" rel="tooltip" data-original-title="일기는 훔쳐보는 맛!">개발일기</a>
+					<a href="/dev3/visit_rec/1" rel="tooltip" data-placement="bottom" data-original-title="이미 당신은 방명록을 남기고 있다...">방명록</a>
+					<?php
+						if(!isset($_SESSION)){ 	
+							session_start();
+						}
+						if(isset($_SESSION['is_login'])){
+    						if($_SESSION['is_login']){
+   								echo '<a href="/dev3/logout" data-toggle="modal">관리자OUT</a>';
+							}
+    					}else{
+    						echo '<a href="#loginModal" data-toggle="modal">관리자IN</a>';}
 					?>
 				</div>
 			</div>
 			<div class="navbar navbar-inverse">
     			<div class="navbar-inner">
-    				<a class="brand" href="#">Adventure</a>
+    				<a class="brand" href="#" rel="tooltip" data-original-title="퐌타스틱 어드벤춰!">Adventure</a>
     				<ul class="nav">
     					<li class="dropdown">
-    						<a href="#" class="dropdown-toggle" data-toggle="dropdown">TWITTER</a>
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown">SNS</a>
     						<ul class="dropdown-menu">
-    							<li><a href="">gfs</a></li>
- 								<li><a href="">fda		</a></li>
+    							<li><a href="/twitter/login" rel="tooltip" id="tw" data-placement="right">Twitter</a>
+    							</li>
+ 								<li><a href="">Facebook</a></li>
     						</ul>
     					</li>
     					<li><a href="#">Link</a></li>
     					<li><a href="#">Link</a></li>
     					<li><a href="#">Link</a></li>
     					<li><a href="#">Link</a></li>
-					    <form class="navbar-form pull-left">
+					 	<form class="navbar-form pull-left" action="">
 							<input type="text" class="">
-							<button type="submit" class="btn">Submit</button>
+							<a href="#" rel="tooltip" id="naverSchBtn" data-original-title="아직 안됐음. 트위터화면에서 누르면 에러가 하얀 눈처럼..." data-placement="top">
+								<button type="" class="btn">네이놈 검색</button>
+							</a>
 						</form>
     				</ul>
     			</div>
+    			<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    					<h3 id="myModalLabel">관리자</h3>
+    				</div>
+    				<div class="modal-body">
+    						<div id="loginForm">
+							<form action="/dev3/login" method="post">
+								<table>
+									<tr><td>ID</td><td><input class="span5" type="text" name="id"/></td></tr>
+									<tr><td>PW</td><td><input class="span5" type="password" name="pw"/></td></tr>
+								</table>
+								<button class="btn">로긴</button>
+							</form>
+							</div>
+    				</div>
+    				<div class="modal-footer">
+    					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    				</div>
     		</div>
 			<div class="row-fluid" id="contents">
 				<div class="span3" id="sideMenu">
-					<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-header">
-	    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	    					<h3 id="myModalLabel">관리자</h3>
-	    				</div>
-	    				<div class="modal-body">
-	    				
-	    						<div id="loginForm">
-								<form action="/dev3/login" method="post">
-									<table>
-										<tr>
-											<td>ID</td>
-											<td><input class="span5" type="text" name="id"/></td>
-										</tr>
-										<tr>
-											<td>PW</td>
-											<td><input class="span5" type="password" name="pw"/></td>
-										</tr>
-									</table>
-									<button class="btn">로긴</button>
-								</form>
-								</div>
-	    				
-	    				</div>
-	    				<div class="modal-footer">
-	    					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-	    				</div>
 					<div id="develop">
-						<a href="jquery_ex.jsp">-jQuery</a>
+						<a href="jquery_ex.jsp"></a>
 					</div>	
 				</div>
-			</div>
+			
+			
+

@@ -21,9 +21,4 @@
 					<div align="center"><button type="submit" class="btn">쓰기</button></div>
 					</form>
 				</div>
-			</div>
-		</div>
-	</div>
-
-</body>
-</html>
+	

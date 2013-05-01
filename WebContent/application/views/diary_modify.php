@@ -26,9 +26,4 @@
 					<div align="center"><button class="btn" onclick="goModifyEx(<?php echo $oneDiary[0]['diaryID']?>)">쓰기</button></div>
 					</form>
 				</div>
-			</div>
-		</div>
-	</div>
-
-</body>
-</html>
+	

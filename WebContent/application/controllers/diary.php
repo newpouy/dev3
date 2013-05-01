@@ -10,12 +10,14 @@ class Diary extends CI_Controller {
 		$tag_list=$this->diary_model->getTag();
 		//var_dump($tag_list);
 		$this->load->view('diary_view',array('list'=>$list,'tag_list'=>$tag_list));
+		$this->load->view('foot');
 		
 		
 	}
 	public function write(){
 		$this->load->view('head');
 		$this->load->view('diary_write');
+		$this->load->view('foot');
 	}
 	public function insert(){
 		$this->load->database();
@@ -29,6 +31,7 @@ class Diary extends CI_Controller {
 		$oneDiary=$this->diary_model->getOneDiary($diaryID);
 		$this->load->view('head');
 		$this->load->view('diary_modify',array('oneDiary'=>$oneDiary));
+		$this->load->view('foot');
 	}
 	public function modifyEx($diaryID){
 		$content=$this->input->post('content');

@@ -14,8 +14,8 @@
 		obj.submit();
 	}
 </script>
-<form name="frm" method="post">
-				<div class="span9" id="eachContent">
+		<div class="span6" id="eachContent">
+			<form name="frm" method="post">
 					<span style="font-size: 20px;">다이어리</span><span style="font-size: 10px;">게시판버전</span>
 					<div align="right"><button class="btn" onclick="goWrite()">쓰기</button></div>
 					<table class='table table-hover'>
@@ -75,10 +75,5 @@ foreach ($list as $key => $value) {
 	';
 }
 ?>
-			</div>
 			</form>
 		</div>
-	</div>
-</div>
-</body>
-</html>
