@@ -11,9 +11,9 @@
 <link href="/common/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <style type="text/css">
 #headLine {
-	background-color: #aaaaaa;
+	background-color: #eeeeee;
 	height: 120px;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 }
 #contents {
 	height: 800px;
@@ -77,6 +77,28 @@ $(function(){
 					?>
 				</div>
 			</div>
+			<div class="navbar navbar-inverse">
+    			<div class="navbar-inner">
+    				<a class="brand" href="#">Adventure</a>
+    				<ul class="nav">
+    					<li class="dropdown">
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown">TWITTER</a>
+    						<ul class="dropdown-menu">
+    							<li><a href="">gfs</a></li>
+ 								<li><a href="">fda		</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">Link</a></li>
+    					<li><a href="#">Link</a></li>
+    					<li><a href="#">Link</a></li>
+    					<li><a href="#">Link</a></li>
+					    <form class="navbar-form pull-left">
+							<input type="text" class="">
+							<button type="submit" class="btn">Submit</button>
+						</form>
+    				</ul>
+    			</div>
+    		</div>
 			<div class="row-fluid" id="contents">
 				<div class="span3" id="sideMenu">
 					<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -108,6 +130,6 @@ $(function(){
 	    				</div>
 					<div id="develop">
 						<a href="jquery_ex.jsp">-jQuery</a>
-					</div>
+					</div>	
 				</div>
-				</div>
+			</div>

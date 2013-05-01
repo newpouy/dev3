@@ -1,6 +1,7 @@
 <?php
 class Dev3 extends CI_Controller {
 	public function index(){
+		//phpinfo();	
 		$this->load->view('head');
 		$this->load->view('main');
 	}
