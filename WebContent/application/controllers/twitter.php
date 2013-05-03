@@ -1,6 +1,7 @@
 <?php
 //컨슈머키 
-																			
+	$consumer_key = '';
+	$consumer_secret = '';																		
 class Twitter extends CI_Controller {
 	public function login(){
 		session_start();
@@ -44,9 +45,11 @@ class Twitter extends CI_Controller {
 		$_SESSION['twitter_access_token'] = $access_token['oauth_token'];
 		$_SESSION['twitter_access_token_secret'] = $access_token['oauth_token_secret'];
 	}//getAccessToken
-	
+
 	public function index(){
-		$this->getAccessToken();
+		if(!isset($_SESSION['twitter_acces_token'])){
+			$this->getAccessToken();
+		}
 		global $consumer_key;
 		global $consumer_secret;
 		$connection=new TwitterOAuth($consumer_key, $consumer_secret, $_SESSION['twitter_access_token'],$_SESSION['twitter_access_token_secret']);
@@ -54,6 +57,47 @@ class Twitter extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('twitter_view',array('timeline'=>$timeline));
 		$this->load->view('foot');
+	}
+	public function timeline(){
+		if(!isset($_SESSION['oauth_token'])){
+			$this->login();
+		}
+		if(!isset($_SESSION['twitter_acces_token'])){
+			$this->getAccessToken();
+		}
+	}
+	public function hotontwit(){
+		session_start();
+		require_once('twitterOAuth.php');
+		global $consumer_key;
+		global $consumer_secret;
+		$connection=new TwitterOAuth($consumer_key, $consumer_secret, $_SESSION['twitter_access_token'],$_SESSION['twitter_access_token_secret']);
+		$timeline=$connection->get('statuses/home_timeline');
+		
+		$this->load->view('head');
+		$count=0;
+		for ($i=0; $i <count($timeline); $i++) { 
+			$texts[$i]=$timeline[$i]->text;
+			$words[$i]=preg_split('/ /', $texts[$i]);
+			foreach ($words[$i] as $key => $value) {
+				$count+=1;
+				echo $count.'th word ---> '.$value.'<br/>';
+				if(strpos($value,'로')>0&&strpos($value,'로')==(strlen($value)-3)){
+					echo strpos($value,'로').'--> 조사 로<br/><br/>';
+				}
+				if(strpos($value,'는')>0&&strpos($value,'는')==(strlen($value)-3)){
+					echo strpos($value,'는').'--> 조사 는<br/><br/>';
+				}
+				if(strpos($value,'에')>0&&strpos($value,'에')==(strlen($value)-3)){
+					echo strpos($value,'에').'--> 조사 에<br/><br/>';
+				}
+			}
+		}
+		$this->load->view('foot');
+		//$this->load->view('head');
+		//$this->load->view('hotontwit_view',array('timeline'=>$timeline));
+		//$this->load->view('foot');
+		
 	}
 }//end twitter
 ?>

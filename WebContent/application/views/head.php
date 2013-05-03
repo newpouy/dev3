@@ -55,7 +55,7 @@ h1 {
 $(function(){
 	$('[rel="tooltip"]').tooltip('toggle');
 	$('[rel="tooltip"]').tooltip('hide');
-	$('#tw').attr("data-original-title","OAuth방식으로 연동되어 당신의 타임라인을 이곳에서 볼 수 있사옵니다. 개인정보는 저장할수 없사옵니다....................오빠 못믿니?")
+	$('#tw').attr("data-original-title","OAuth방식으로 연동되어 당신의 타임라인을 이곳에서 볼 수 있사옵니다. 개인정보는 저장할수 없사옵니다.")
 		.tooltip('toggle').tooltip('hide').next('div').addClass('widthWide');
 });
 
@@ -87,18 +87,20 @@ $(function(){
 			</div>
 			<div class="navbar navbar-inverse">
     			<div class="navbar-inner">
-    				<a class="brand" href="#" rel="tooltip" data-original-title="퐌타스틱 어드벤춰!">Adventure</a>
+    				<a class="brand" href="#" rel="tooltip" data-original-title="퐌타스틱 어드벤춰!">Adventure to</a>
     				<ul class="nav">
     					<li class="dropdown">
-    						<a href="#" class="dropdown-toggle" data-toggle="dropdown">SNS</a>
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="짹짹" data-placement="top">Twitter</a>
     						<ul class="dropdown-menu">
-    							<li><a href="/twitter/login" rel="tooltip" id="tw" data-placement="right">Twitter</a>
+    							<li><a href="/twitter/timeline" rel="tooltip" id="tw" data-placement="right">timeline</a>
     							</li>
- 								<li><a href="">Facebook</a></li>
+ 								<li><a href="/twitter/hotontwit">hot on twit</a></li>
     						</ul>
     					</li>
-    					<li><a href="#">Link</a></li>
-    					<li><a href="#">Link</a></li>
+    					<li>
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="얼굴책">Facebook</a>
+    					</li>
+    					<li><a href="/processingjs">ProcessingJS</a></li>
     					<li><a href="#">Link</a></li>
     					<li><a href="#">Link</a></li>
 					 	<form class="navbar-form pull-left" action="">

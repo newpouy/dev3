@@ -6,7 +6,7 @@
 	});
 </script>
 
-				<div class="span9" id="eachContent">
+				<div class="span6" id="eachContent">
 					<span style="font-size: 20px;">다이어리</span><span style="font-size: 10px;">게시판버전</span><br/>
 						<script src="/common/ckeditor/ckeditor.js"></script>
 						<form name="frm" action="/diary/insert" method="post">
