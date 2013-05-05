@@ -1,7 +1,7 @@
 <div class="span6" id="eachContent">
 <script type="text/javascript" src="/common/processing-1.4.1.js"></script>
 	<div style="float: left; margin: 10px;">
-		<script type="application/processing" data-processing-target="can1">
+		<script type="application/processing" data-processing-target="canvas1">
 		void setup() 
 		{
 		  size(200, 200); 
@@ -18,10 +18,12 @@
 		  rect(width-mouseX, height/2, ((height-mouseY)/2)+10, ((height-mouseY)/2)+10);
 		}
 		</script>
-		<canvas id="can1"></canvas>
+		<canvas id="canvas1"></canvas><br/>
+		canvas1
 	</div>
 	<div style="float: left; margin: 10px;">
-		<script type="application/processing" data-processing-target="can2">
+		
+		<script type="application/processing" data-processing-target="canvas2">
 		// Global variables
 		float radius = 50.0;
 		int X, Y;
@@ -64,10 +66,11 @@
 		  nY = mouseY;  
 		}
 		</script>
-		<canvas id="can2"></canvas>
+		<canvas id="canvas2"></canvas>
+		<br/>canvas2
 	</div>
 	<div style="float: left; margin: 10px;">
-		<canvas id="can3" width="200px;" height="200px;"></canvas>
+		<canvas id="canvas3" width="200px;" height="200px;"></canvas>
 		<script id="script1" type="text/javascript">
 		// Simple way to attach js code to the canvas is by using a function
 		function sketchProc(processing) {
@@ -104,15 +107,16 @@
 		  
 		}
 		
-		var canvas = document.getElementById("can3");
+		var canvas = document.getElementById("canvas3");
 		// attaching the sketchProc function to the canvas
 		var p = new Processing(canvas, sketchProc);
 		// p.exit(); to detach it
 		</script>
+		<br/>canvas3
 	</div>
 	<div style="float: left; margin: 10px;">
-		<canvas id="can4"></canvas>
-		<script type="application/processing" data-processing-target="can4">
+		<canvas id="canvas4"></canvas>
+		<script type="application/processing" data-processing-target="canvas4">
 			// All Examples Written by Casey Reas and Ben Fry
 			// unless otherwise stated.
 			int num = 60;
@@ -144,8 +148,14 @@
 			  }
 			}
 		</script>
+		<br/>canvas4
 	</div>
 	<div style="float: left; margin: 10px;">
-		<canvas data-processing-sources="/application/views/processing_rec.pde"></canvas>
+		<canvas id="canvas5" datasrc="/processing/make_won_01.pde"></canvas>
+		<br/>canvas5
+	</div>
+	<div style="float: left; margin: 10px;">
+		<canvas id="canvas6" datasrc="/processing/snake.pde"></canvas>
+		<br/>canvas6
 	</div>
 </div>

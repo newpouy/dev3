@@ -48,7 +48,7 @@ h1 {
 }
 </style>
 
-<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/common/jquery-1.9.1.js"></script>
 <script src="/common/bootstrap/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
@@ -66,7 +66,9 @@ $(function(){
 	<div class="">
 		<div class="row-fluid">
 			<div class="span12" id="headLine">
-				<a href="/" style="color: #222"><h1>Develop-ing Diary</h1></a><br/>
+				<a href="/" style="color: #222"><h1>Develop-ing Diary</h1>
+					
+				</a><br/>
 				&nbsp;<span style="font-weight: bold;">알림 </span><span id="notice">방명록과 개발일기 만들었습니다. 개발일기는 매일 업데이트됩니다(아마도...)</span> 
 				<div id="headMenu">
 					<a href="/dev3">Home</a>
@@ -100,7 +102,21 @@ $(function(){
     					<li>
     						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="얼굴책">Facebook</a>
     					</li>
-    					<li><a href="/processingjs">ProcessingJS</a></li>
+    					<li class="dropdown">
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="Dinamic!!" data-placement="top">ProcessingJS</a>
+    						<ul class="dropdown-menu">
+    							<li>
+    								<a href="/processingjs/examples/1" rel="tooltip" id="tw" data-placement="right">examples1</a>
+    							</li>
+    							<li>
+    								<a href="/processingjs/examples/2" rel="tooltip" id="tw" data-placement="right">examples2</a>
+    							</li>
+    							<li>
+    								<a href="/processingjs/examples/3" rel="tooltip" id="tw" data-placement="right">examples3</a>
+    							</li>
+ 								<li><a href="/processingjs/exercise1">exercise1</a></li>
+    						</ul>
+    					</li>
     					<li><a href="#">Link</a></li>
     					<li><a href="#">Link</a></li>
 					 	<form class="navbar-form pull-left" action="">
