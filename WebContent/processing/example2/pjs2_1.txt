@@ -1,0 +1,25 @@
+PVector[] stars;
+int c = 40;
+void setup() {
+    size(300,300);
+    frameRate(12);
+    stars = new PVector[c];
+    for( int i=0; i<c; i++) {
+        stars[i] = new PVector(random( width ) , random( height ));
+    }
+    frameRate( 24 );
+}
+
+void draw() {
+    background(0);
+    for( int i=0; i<c; i++) {
+        pushMatrix();
+        translate( stars[i].x, stars[i].y );
+        fill( 128 + i * 128/c ); 
+        ellipse( 0,0, i/(c/5) + 2, i/(c/5) + 2);
+        popMatrix();
+        
+        stars[i].y += i/(c/4) +1;
+        if ( stars[i].y > height ) stars[i] = new PVector( random( width), 0);
+    }
+}

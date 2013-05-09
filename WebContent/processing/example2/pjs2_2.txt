@@ -1,0 +1,60 @@
+import java.util.List;
+List particles;
+void setup() {
+    size(300,300);
+    particles = new ArrayList();
+}
+
+void draw() {
+  fill(0,100);
+  rect(0,0,width,height);
+  strokeWeight(2); 
+  for( int i =0; i < particles.size(); i++) {
+    Particle p = (Particle)particles.get(i);
+    if (!p.isDead()) {
+      p.update();
+      p.draw();
+    }
+  }
+}
+
+void mouseDragged() {
+   if (mousePressed ==true ) {
+    particles.add( new Particle( new PVector( mouseX, mouseY ), new PVector(random(-1,1),random(-1,1)), 80 ));
+   }
+}
+
+class Particle {
+
+  PVector p;
+  PVector s;
+  int ttl;
+  boolean g;
+  PImage img;
+  
+  public Particle( PVector p, PVector s, int ttl ) {
+    this.p = p;
+    this.s = s;
+    this.ttl = ttl;
+  }
+
+  public void update() {
+    if ( ttl > 0 ) {
+      ttl--;
+      p.add( s );
+      s = new PVector( s.x, s.y + .1 );
+    }
+  }
+ 
+  public void draw() {
+    if ( !isDead()) {
+       stroke(255,200+ttl);
+        line(p.x,p.y,p.x,p.y+1);
+    }
+  }
+  
+  public boolean isDead() {
+    return ttl <= 0;
+  }
+  
+}

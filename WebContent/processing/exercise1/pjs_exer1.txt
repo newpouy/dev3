@@ -1,0 +1,76 @@
+int r_arm_startX=50;
+int r_arm_startY=140;
+int r_arm_endX=10;
+int r_arm_endY=140;
+int l_arm_startX=110;
+int l_arm_startY=140;
+int l_arm_endX=150;
+int l_arm_endY=140;
+int i=0;
+int j=9;
+
+void setup()
+{
+	size(400,400);
+	frameRate(60);
+}
+void draw()
+{
+	
+	background(200);
+	fill(255);
+	rect(50,120,60,60);//몸
+	ellipse(80,80,80,80);//얼굴
+	
+	if(74<mouseX&&mouseX<86&&90<mouseY&&mouseY<103){
+		if(j%40>20){
+			ellipse(80,95,15,15);//입
+			line(57,71,65,61);//웃는오른눈
+			line(65,61,73,71);
+			line(85,71,93,61);//웃는왼눈
+			line(93,61,101,71);
+			line(70,180,50,190);//오른다리
+			line(50,190,70,210);
+			line(90,180,110,190);//왼다리
+			line(110,190,90,210);
+		}else{
+			ellipse(80,95,15,20);//입
+			line(70,180,50,240);//오른다리
+			line(90,180,110,240);//왼다리
+		}
+	}else{
+		line(70,180,50,240);//오른다리
+		line(90,180,110,240);//왼다리
+		line(56,66,74,66);//오른눈
+		line(84,66,102,66);//왼눈
+		if(j%40>20){
+			ellipse(80,95,15,15);//입
+			line(65,66,65,80);//오른눈물
+		}else{
+			ellipse(80,95,15,20);//입
+			line(93,66,93,80);//왼눈물
+		}
+	}
+	
+	line(r_arm_startX,r_arm_startY,r_arm_endX,r_arm_endY+i);//오른팔
+	line(l_arm_startX,l_arm_startY,l_arm_endX,l_arm_endY-i);//왼팔
+	j++;
+	if(j%40<20){
+		i++;
+	}else{
+		i--;
+	}
+	
+	text(i,10,10);
+	text(j,10,20);
+	
+	fill(0);
+	text('배고픈 아이가 울고 있어요. 마우스 한입 넣어 주세요.',10,300);
+
+
+	text(mouseX,120,10);
+	text(mouseY,150,10);
+}
+
+
+

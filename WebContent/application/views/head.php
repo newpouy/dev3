@@ -50,6 +50,7 @@ h1 {
 
 <script src="/common/jquery-1.9.1.js"></script>
 <script src="/common/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/common/processing-1.4.1.js"></script>
 
 <script type="text/javascript">
 $(function(){
@@ -96,25 +97,33 @@ $(function(){
     						<ul class="dropdown-menu">
     							<li><a href="/twitter/timeline" rel="tooltip" id="tw" data-placement="right">timeline</a>
     							</li>
- 								<li><a href="/twitter/hotontwit">hot on twit</a></li>
+ 								<li><a href="/twitter/hotontwit" rel="tooltip" data-original-title="아직 구현하지 않았습니다" data-placement="right">hot on twit</a></li>
     						</ul>
     					</li>
     					<li>
-    						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="얼굴책">Facebook</a>
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="아직 구현하지 않았습니다">Facebook</a>
     					</li>
     					<li class="dropdown">
     						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="Dinamic!!" data-placement="top">ProcessingJS</a>
     						<ul class="dropdown-menu">
     							<li>
-    								<a href="/processingjs/examples/1" rel="tooltip" id="tw" data-placement="right">examples1</a>
+    								<a href="/processingjs/examples/1" rel="tooltip" id="" data-placement="right">examples1</a>
     							</li>
     							<li>
-    								<a href="/processingjs/examples/2" rel="tooltip" id="tw" data-placement="right">examples2</a>
-    							</li>
-    							<li>
-    								<a href="/processingjs/examples/3" rel="tooltip" id="tw" data-placement="right">examples3</a>
+    								<a href="/processingjs/examples/2" rel="tooltip" id="" data-placement="right">examples2</a>
     							</li>
  								<li><a href="/processingjs/exercise1">exercise1</a></li>
+    						</ul>
+    					</li>
+    					<li class="dropdown">
+    						<a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="tooltip" data-original-title="" data-placement="top">Design Pattern</a>
+    						<ul class="dropdown-menu">
+    							<li>
+    								<a href="#" rel="tooltip" id="" data-placement="right">pattern</a>
+    							</li>
+    							<li>
+    								<a href="#" rel="tooltip" id="" data-placement="right">pattern</a>
+    							</li>
     						</ul>
     					</li>
     					<li><a href="#">Link</a></li>

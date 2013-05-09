@@ -10,5 +10,8 @@ class Processingjs extends CI_Controller {
 		$this->load->view('pjs_exer1_view');
 		$this->load->view('foot');
 	}
+	public function ajax(){
+		echo json_encode(array('result'=>true,'value'=>$_REQUEST['value']));
+	}
 }
 ?>
