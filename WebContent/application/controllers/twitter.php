@@ -1,7 +1,6 @@
 <?php
 //컨슈머키 
-	$consumer_key = '';
-	$consumer_secret = '';																		
+																			
 class Twitter extends CI_Controller {
 	public function login(){
 		session_start();
